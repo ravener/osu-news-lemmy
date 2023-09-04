@@ -1,0 +1,7 @@
+.env
+node_modules
+
+# Cached request data and credentials
+lemmy.token
+last_update.json
+osu.json
