@@ -65,7 +65,9 @@ async function getLatestNews() {
   writeFileSync('last_update.json', JSON.stringify({ date: new Date() }));
 
   // Filter for new posts since our last checked time.
-  return news_posts.filter(post => new Date(post.published_at) > last);
+  return news_posts
+    .filter(post => new Date(post.published_at) > last)
+    .reverse();
 }
 
 async function postNews(news) {
