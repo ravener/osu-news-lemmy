@@ -7,6 +7,11 @@ import log from './log.js';
 
 const client = new LemmyHttp(process.env.INSTANCE);
 const jwt = await login();
+
+client.setHeaders({
+  'Authorization': `Bearer ${jwt}`
+});
+
 let community_id;
 
 log.info(`Checking for the community '${process.env.COMMUNITY}' on instance '${process.env.INSTANCE}'`);
