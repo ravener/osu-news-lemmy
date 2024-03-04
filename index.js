@@ -82,7 +82,8 @@ async function postNews(news) {
     auth: jwt,
     community_id,
     name: news.title,
-    url: `https://osu.ppy.sh/home/news/${news.slug}`
+    url: `https://osu.ppy.sh/home/news/${news.slug}`,
+    body: news.preview
   });
 }
 
